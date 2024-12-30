@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const isMaster = localStorage.getItem("isMaster") === "true";
+  const isMaster = useSelector((state) => state.auth.isMaster);
 
   const handleHomeClick = () => {
     navigate(isMaster ? "/home" : "/homeuser");

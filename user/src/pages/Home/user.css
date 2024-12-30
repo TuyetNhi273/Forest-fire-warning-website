@@ -1,18 +1,14 @@
-.app{
-    width: 100%;
-    max-width: 99vw;
-    height: min-content;
-}
+
 .homeuser{
     width:100%;
     height: auto;
-    display: flex;
+    display: grid;
     grid-template-areas:
-        "im im ia ia ia"
-        "im im ia ia ia"
-        "id ica ica ica ica"
-        "id ica ica ica ica"
-        "id ica ica ica ica"
+        "im im  ia  ia  ia"
+        "im im  ia  ia  ia"
+        "im im  ica ica ica"
+        "id id  ica ica ica"
+        "id id  ica ica ica"
     ;
     grid-template-rows: auto auto auto auto auto;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -29,6 +25,16 @@
 .infoAtitude {
     padding: 0.4rem;
     grid-area: ia;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoGps {
+    padding: 0.4rem;
+    grid-area: ig;
+    background-color: aliceblue;
+    border-radius: 1rem;
 }
 
 .infoMap {
@@ -50,4 +56,9 @@
     grid-area: ico;
     background-color: aliceblue;
     border-radius: 1rem;
+}
+
+.infoWp {
+    padding: 0.4rem;
+    grid-area: iw;
 }

@@ -7,6 +7,7 @@ const initialState = {
   isLoggedIn: false,
   user: null,
   error: null,
+  isMaster: false
 };
 
 const authSlice = createSlice({
@@ -28,19 +29,28 @@ const authSlice = createSlice({
     loginStart: (state) => {
       state.isLoggingIn = true;
       state.error = null;
+      state.isMaster = false;
     },
     loginSuccess: (state, action) => {
       state.isLoggingIn = false;
       state.isLoggedIn = true;
       state.user = action.payload;
+      state.isMaster = true;
     },
     loginFailure: (state) => {
       state.isLoggingIn = false;
       state.isLoggedIn = false;
       state.error = "Login failed";
+      state.isMaster = false;
+      state.user = null;
+    },
+    logout: (state) => {
+      state.isLoggedIn = false;
+      state.user = null;
+      state.isMaster = false;
     },
   },
 });
 
-export const { registerStart, registerSuccess, registerFailure, loginStart, loginSuccess, loginFailure } = authSlice.actions;
+export const { registerStart, registerSuccess, registerFailure, loginStart, loginSuccess, loginFailure, logout } = authSlice.actions;
 export default authSlice.reducer;

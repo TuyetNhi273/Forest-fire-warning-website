@@ -7,7 +7,13 @@ import InforGps from "../../components/InforGps";
 import InforCamera from "../../components/InforCamera";
 import InforMap from "../../components/InforMap";
 import InforWp from "../../components/InforWp";
+/*
 
+
+Can send command
+
+
+*/
 const HomePage = () => {
   const socket = useContext(SocketContext);
 

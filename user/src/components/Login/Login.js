@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import "./Login.css";
-
+import { loginStart, loginSuccess, loginFailure } from "../../Redux/authSlice";
+import { useSelector } from "react-redux";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  
+  const isMaster = useSelector((state) => state.auth.isMaster);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -16,7 +21,8 @@ const Login = () => {
       alert("Vui lòng nhập đầy đủ thông tin.");
       return;
     }
-  
+    
+    dispatch(loginStart());
     setLoading(true);
   
     fetch("http://localhost:5000/api/auth/login", {
@@ -35,16 +41,15 @@ const Login = () => {
         return res.json();
       })
       .then((data) => {
-        console.log("Login response:", data);
+        console.log("Login response:", data.result);
+        dispatch(loginSuccess(data.result));
         setLoading(false);
       
         if (data.token) {
           alert("Đăng nhập thành công!");
           localStorage.setItem("token", data.token);
-          localStorage.setItem("isMaster", data.result.isMaster); // Lưu trạng thái isMaster
-          console.log("isMaster stored:", data.result.isMaster);
-      
-          if (data.result.isMaster) {
+          
+          if (isMaster) {
             navigate("/home");
           } else {
             navigate("/homeuser");
@@ -54,6 +59,7 @@ const Login = () => {
       
       .catch((error) => {
         setLoading(false);
+        dispatch(loginFailure());
         alert(
           error.message === "Failed to fetch"
             ? "Không thể kết nối với server. Vui lòng kiểm tra mạng!"

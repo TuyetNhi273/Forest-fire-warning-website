@@ -11,8 +11,8 @@
         "im  ica ica ica id"
         "im  ica ica ica id"
         "im  ica ica ica ig"
-        "iw  iw  iw  ia  ia"
-        "iw  iw  iw  ia  ia"
+        "iw  iw  ia  ia  ia"
+        "iw  iw  ia  ia  ia"
     ;
     grid-template-rows: auto auto auto auto auto;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -29,6 +29,9 @@
 .infoAtitude {
     padding: 0.4rem;
     grid-area: ia;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .infoGps {

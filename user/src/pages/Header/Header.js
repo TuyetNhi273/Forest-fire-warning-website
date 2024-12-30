@@ -1,22 +1,31 @@
 import React from "react"; 
 import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../../Redux/authSlice";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const isMaster = useSelector((state) => state.auth.isMaster);
+  const user = useSelector((state) => state.auth.user);
   const isLoggedIn = !!localStorage.getItem("token");
-  const isMaster = localStorage.getItem("isMaster") === "true";
+
+  console.log("User:", user);
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // Xóa token
+    localStorage.removeItem("token");
+    dispatch(logout());
     alert("Bạn đã đăng xuất.");
-    navigate("/login"); // Điều hướng về trang đăng nhập
+    navigate("/login");
   };
 
   return (
     <header className="header">
       <div className="header-left">
-        <h1>DMS</h1>
+        <h1>{user?.name|| "DSM"}</h1>
       </div>
       <div className="header-r">
         <nav className="header-nav">

@@ -1,11 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import { SocketContext } from "../../contexts/socket_io";
-import "./style.css";
+import "./user.css";
 import InforDrone from "../../components/InforDrone";
 import InforAtitude from "../../components/Attitude/Attitude";
 import InforCamera from "../../components/InforCamera";
 import InforMap from "../../components/InforMap";
+/*
 
+
+No send command
+
+
+*/
 const HomeUser = () => {
   const socket = useContext(SocketContext);
 
