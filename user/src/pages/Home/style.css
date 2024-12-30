@@ -1,0 +1,65 @@
+.app{
+    width: 100%;
+    max-width: 99vw;
+    height: min-content;
+}
+.home {
+    width:100%;
+    height: auto;
+    display: grid;
+    grid-template-areas:
+        "im  ica ica ica id"
+        "im  ica ica ica id"
+        "im  ica ica ica ig"
+        "iw  iw  iw  ia  ia"
+        "iw  iw  iw  ia  ia"
+    ;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0.2rem;
+}
+
+.infoDrone {
+    padding: 0.4rem;
+    grid-area: id;
+    background-color: aliceblue;
+    border-radius: 1rem;
+}
+
+.infoAtitude {
+    padding: 0.4rem;
+    grid-area: ia;
+}
+
+.infoGps {
+    padding: 0.4rem;
+    grid-area: ig;
+    background-color: aliceblue;
+    border-radius: 1rem;
+}
+
+.infoMap {
+    padding: 0.4rem;
+    grid-area: im;
+    background-color: aliceblue;
+    border-radius: 1rem;
+}
+
+.infoCamera {
+    padding: 0.4rem;
+    grid-area: ica;
+    background-color: aliceblue;
+    border-radius: 1rem;
+}
+
+.infoCommand {
+    padding: 0.4rem;
+    grid-area: ico;
+    background-color: aliceblue;
+    border-radius: 1rem;
+}
+
+.infoWp {
+    padding: 0.4rem;
+    grid-area: iw;
+}

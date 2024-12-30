@@ -1,0 +1,12 @@
+@import-normalize;
+
+body{
+    margin: 0;
+    width: 100vw;
+    height: min-content;
+    overflow-x: hidden;
+}
+.app{
+    width: 100vw;
+    height: min-content;
+}

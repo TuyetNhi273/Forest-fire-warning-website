@@ -1,0 +1,79 @@
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  .login-box {
+    display: block;
+    width: 25rem;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .login-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .input-field {
+    margin-bottom: 15px;
+  }
+  
+  .input-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .input {
+    width: 95%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  
+  .submit-button {
+    width: 5rem;
+    height: 2rem;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .submit-button.loading {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .spinner {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #007bff;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

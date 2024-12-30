@@ -1,0 +1,53 @@
+.app{
+    width: 100%;
+    max-width: 99vw;
+    height: min-content;
+}
+.homeuser{
+    width:100%;
+    height: auto;
+    display: flex;
+    grid-template-areas:
+        "im im ia ia ia"
+        "im im ia ia ia"
+        "id ica ica ica ica"
+        "id ica ica ica ica"
+        "id ica ica ica ica"
+    ;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0.2rem;
+}
+
+.infoDrone {
+    padding: 0.4rem;
+    grid-area: id;
+    background-color: aliceblue;
+    border-radius: 1rem;
+}
+
+.infoAtitude {
+    padding: 0.4rem;
+    grid-area: ia;
+}
+
+.infoMap {
+    padding: 0.4rem;
+    grid-area: im;
+    background-color: aliceblue;
+    border-radius: 1rem;
+}
+
+.infoCamera {
+    padding: 0.4rem;
+    grid-area: ica;
+    background-color: aliceblue;
+    border-radius: 1rem;
+}
+
+.infoCommand {
+    padding: 0.4rem;
+    grid-area: ico;
+    background-color: aliceblue;
+    border-radius: 1rem;
+}
