@@ -25,22 +25,30 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-left">
-        <h1>{user?.name|| "DSM"}</h1>
+        <h1>DSM</h1>
       </div>
       <div className="header-r">
         <nav className="header-nav">
           <ul>
-            <li><Link to="/">About</Link></li>
-            <li><Link to={isMaster ? "/home" : "/homeuser"}>Home</Link></li>
+            <li style={{"display":"flex", "justifyContent":"center", "alignItems":"center", "padding":"0px 8px", "margin":"0px"}}><Link to="/">About</Link></li>
+            <li style={{"display":"flex", "justifyContent":"center", "alignItems":"center", "padding":"0px 8px", "margin":"0px"}}><Link to={isMaster ? "/home" : "/homeuser"}>Home</Link></li>
             {!isLoggedIn ? (
               <>
-                <li><Link to="/login" className="login">Login</Link></li>
-                <li><Link to="/register" className="register">Register</Link></li>
+                <li style={{"display":"flex", "justifyContent":"center", "alignItems":"center", "padding":"0px 8px", "margin":"0px"}}><Link to="/login" className="login">Login</Link></li>
+                <li style={{"display":"flex", "justifyContent":"center", "alignItems":"center", "padding":"0px 8px", "margin":"0px"}}><Link to="/register" className="register">Register</Link></li>
               </>
             ) : (
-              <li>
-                <button onClick={handleLogout} className="logout">Logout</button>
+              <li style={{"display":"flex", "justifyContent":"center", "alignItems":"center", "padding":"0px 8px", "margin":"0px"}}>
+                <ul>
+                  <li style={{"display":"flex", "justifyContent":"center", "alignItems":"center", "padding":"0px 8px", "margin":"0px"}}>
+                    <p style={{"padding":"0px", "margin" :"0px", "display" :"flex", "justifyContent" : "center", "textAlign":"center"}}>{user?.name|| "None-User"}</p>
+                  </li>
+                  <li style={{"display":"flex", "justifyContent":"center", "alignItems":"center", "padding":"0px 8px", "margin":"0px"}}>
+                    <button onClick={handleLogout} className="logout">Logout</button>
+                  </li>
+                </ul>
               </li>
+              
             )}
           </ul>
         </nav>
